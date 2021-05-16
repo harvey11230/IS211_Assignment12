@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 4px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+</style>
+<title>Students Quzzies Results</title>
+</head>
+<body>
+
+<h1>Students Quzzies Results</h1>
+
+<table>
+  <tr>
+    <th style="width:3px">Student ID</th>
+    <th style="width:3px">First</th>
+    <th style="width:3px">Last</th>
+    <th style="width:3px">Subject</th>
+    <th style="width:3px">Score</th>
+  </tr>
+  <tr>
+    <tr>
+    {% for row in result %}
+    </tr>
+    <td>{{row[0]}}</td>
+    <td>{{row[1]}}</td>
+    <td>{{row[2]}}</td>
+    <td>{{row[3]}}</td>
+    <td>{{row[4]}}</td>
+    {% endfor %}
+  </tr>
+</table>
+
+<br>
+<br>
+
+<form action = "/submit" method = "POST">
+  <td>Student ID <input type = "number" name ="Student_ID" />First Name <input type = "text" name = "First_Name"/>Last Name <input type = "text" name = "Last_Name" /> </td>
+
+    <td>Choose a subject:</td>
+    <select name = "Subject">
+      <option value="1">Python</option>
+      <option value="2">SQL</option>
+      <option value="3">Math</option>
+      <option value="4">English</option>
+    </select>
+  </td>
+
+  <p>Score <input type = "number" name = "Score"</p>
+
+  <br><br>
+
+  <button type="submit"> Submit</button>
+
+
+</form>
+
+</body>
+</html>
